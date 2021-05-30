@@ -1,0 +1,16 @@
+/* Login 頁 */
+.form-control:focus {
+  border-color: $streak !important;
+  // box-shadow: 0px 0px 5px .2rem rgba(134, 133, 128, 0.6)!important;
+  box-shadow: 0px 0px 5px .2rem rgba(99, 98, 95, 0.6)!important;
+}
+.form-check-input:checked {
+  background-color: $hgray;
+  border-color: $hgray;
+}
+.form-check-input:focus {
+  border-color: #939393;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(121, 119, 116, 0.6);
+}
+

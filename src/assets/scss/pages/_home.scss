@@ -1,0 +1,48 @@
+.carousel-item-txt {
+  bottom: 50px;
+}
+// 最新消息區塊
+.news h2::after{
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: $lgreen;
+  margin: 0 auto;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  right: 0;
+}
+.mews-card {
+  & .card-footer {
+    background-color: transparent;
+    border-top: 0px solid rgba(0, 0, 0, 0.125);
+    padding: 0rem 1rem 1.5rem;
+  }
+}
+.hvr-bounce-to-right:before {
+  background: $sgreen;
+}
+
+/*----------- 首頁 footer -----------*/
+.footer-logo {
+  font-family: "Open Sans";
+  transition: .3s ease-out all;
+  &:hover {
+    font-family: Kaushan Script, cursive;
+    font-size: 36px;
+  }
+}
+.home-footer-link {
+  transition: .5s ease-out all;
+  &:hover {
+    transform: translateX(10px);
+  }
+}
+.footer-contact {
+  color: $streak;
+  &:hover {
+    color: $sgreen;
+  }
+}

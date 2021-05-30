@@ -1,0 +1,72 @@
+@mixin hide-text {
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* 水平垂直置中 */
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+/* 垂直置中 */
+@mixin align-middle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin banner($url, $height) {
+  background-image: url($url);
+  height: $height;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* 水平垂直置中 */
+@mixin align-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+@mixin nav-hover {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  height: 2px;
+  transition: all 1s;
+  background: #fff;
+  left: 0px;
+  /* 添加以下兩行，會由中間往兩旁延伸 */
+  // left: 50%;
+  // width: 0%;
+  // transform: translate(-50%);
+
+  /* 由左往右延伸 : 需微調 */
+  // left: 0px;
+  // width: 0%;
+
+}
+@mixin desktop {
+  @media(min-width:992px){
+    @content;
+  }
+}
+@mixin pad {
+  @media(min-width:768px){
+    @content;
+  }
+}
+@mixin mobile {
+  @media(min-width:576px){
+    @content;
+  }
+}
+@mixin smobile {
+  @media(min-width:375px){
+    @content;
+  }
+}
