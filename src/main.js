@@ -39,6 +39,7 @@ router.beforeEach((to, from, next) => {
       if (res.data.success) {
         next()
       } else {
+        this.$swal({ title: res.data.message, icon: 'error' })
         next({
           path: '/login'
         })

@@ -45,3 +45,13 @@ ul,ol,li{
 .hvr-bounce-to-right:before {
   background: $sgreen;
 }
+.bg{
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.bg-cover{
+	background-size: cover;
+}
+.bg-fixed{
+	background-attachment: fixed;
+}
