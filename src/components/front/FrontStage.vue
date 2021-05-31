@@ -3,7 +3,7 @@
   <Alert />
   <NavBar />
   <footer class="bg-theme">
-    <div class="container text-streak text-md-end text-center px-4 py-6">
+    <div class="container text-streak text-md-end text-center px-4 py-4">
       <small>版權所有 ⓒ 2021 僅為作品用無商業用途</small>
     </div>
   </footer>

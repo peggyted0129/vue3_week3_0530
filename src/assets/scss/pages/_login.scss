@@ -1,6 +1,7 @@
 .main {
+  background: url('~@/assets/img/banner5.jpg') 0 / cover fixed;
   min-height: 100vh;
-  padding: calc(50vh - 215px) 0;
+  padding: calc(50vh - 165px) 0 0;
 }
 .glass {
   background: hsla(0,0%,100%,.5);  
@@ -22,8 +23,25 @@
   z-index: -1;
   margin: -10px;
 }
-
 .eye {
-  top: 43.5%;
-  left: 84%;
+  top: 51%;
+  left: 75%;
+}
+@media (min-width: 414px){
+  .eye {
+    top: 51%;
+    left: 81%;
+  }
+}
+@include mobile {
+  .eye {
+    top: 43%;
+    left: 84%;
+  }
+}
+@include pad {
+  .eye {
+    top: 43.8%;
+    left: 84%;
+  }
 }

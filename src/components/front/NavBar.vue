@@ -1,6 +1,6 @@
 <template>
 <section>
-  <nav :class="{ 'navbar-scroll': isMenuOpen || scrollHeader , 'bg-dark' : togglerBtn }" class="navbar navbar-expand-md">
+  <nav :class="{ 'navbar-scroll': isMenuOpen || scrollHeader , 'bg-theme' : togglerBtn }" class="navbar navbar-expand-md py-0">
     <div class="container-fluid container-md align-items-center">
       <h1 class="h3 ml-5 ml-md-0">
         <router-link :to="{ name: 'Home' }" class="navbar-logo">Sebamed</router-link>
