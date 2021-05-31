@@ -173,3 +173,24 @@ button:focus {
     padding: 7px 22px;
   }
 }
+/*----------- footer-list -----------*/
+.footer-logo {
+  font-family: "Open Sans";
+  transition: .3s ease-out all;
+  &:hover {
+    font-family: Kaushan Script, cursive;
+    font-size: 36px;
+  }
+}
+.footer-list-link {
+  transition: .5s ease-out all;
+  &:hover {
+    transform: translateX(10px);
+  }
+}
+.footer-contact {
+  color: $streak;
+  &:hover {
+    color: $sgreen;
+  }
+}

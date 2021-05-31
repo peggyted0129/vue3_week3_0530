@@ -86,67 +86,6 @@
         </div>
       </div>
     </main>
-    <!-- 首頁 footer -->
-    <footer class="home-footer bg-theme">
-      <div class="container py-12">
-        <div class="row">
-          <!-- 左側邊攔 -->
-          <div class="col-lg-4 col-md-6 mb-9">
-            <h1 class="h3 px-5 px-sm-0">
-              <a href="#" class="footer-logo text-white">Sebamed</a>
-            </h1>
-            <p class="pe-5 px-5 px-sm-0 pt-5 text-streak">pH5.5原創領導品牌 | 德國NO.1醫學潔護品牌美麗來自健康肌膚 Science for healthy skin.</p>
-          </div>
-          <!-- 中間邊攔 -->
-          <div class="col-lg-4 col-md-6 mb-9">
-            <ul class="px-5 px-sm-0 px-md-5">
-              <li class="pb-3 border-bottom"><h4 class="text-white">關注我們</h4></li>
-              <li>
-                <a href="#" class="text-streak pt-8 d-flex home-footer-link">
-                  <span class="me-2"><i class="fas fa-chevron-right"></i></span>
-                  <span>產品總覽</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="text-streak pt-5 d-flex home-footer-link">
-                  <span class="me-2"><i class="fas fa-chevron-right"></i></span>
-                  <span>產品總覽</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="text-streak pt-5 d-flex home-footer-link">
-                  <span class="me-2"><i class="fas fa-chevron-right"></i></span>
-                  <span>產品總覽</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- 右間邊攔 -->
-          <div class="col-lg-4 col-md-6 mt-lg-0">
-            <ul class="px-5 px-sm-0">
-              <li class="pb-3 border-bottom"><h4 class="text-white">聯絡我們</h4></li>
-              <li class="pt-8">
-                <h6 class="text-streak">Sebamed 股份有限公司</h6>
-              </li>
-              <li class="d-flex text-streak pt-5">
-                <a href="tel:0800-000-123">
-                  <span class="material-icons me-3 text-sgreen">call</span>
-                  <span class="footer-contact">0800-000-123</span>
-                </a>
-              </li>
-              <li class="d-flex text-streak pt-5">
-                <span class="material-icons me-3 text-sgreen">camera_outdoor</span>
-                <span>9:00-12:00 l 13:30-17:30 (國定與例假日除外)</span>
-              </li>
-              <li class="d-flex text-streak pt-5">
-                <span class="material-icons me-3 text-sgreen">email</span>
-                <a href="mailto:service@nature.com.tw" class="footer-contact">service@nature.com.tw</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
   </header>
 </template>
 <script>
