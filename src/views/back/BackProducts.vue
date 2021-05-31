@@ -59,7 +59,7 @@
                   </label>
                   <input type="file" id="customFile" class="form-control my-4" ref="files" @change="uploadFile">
                 </div>
-                <img class="img-fluid" :src="tempProduct.imageUrl" alt="product-pic">
+                <img class="img-fluid" :src="tempProduct.imageUrl">
                 <div class="mb-1">多圖新增</div>
                 <div v-if="Array.isArray(tempProduct.imagesUrl)">
                   <div class="mb-1" v-for="(image, key) in tempProduct.imagesUrl" :key="key">
@@ -86,7 +86,7 @@
                 <div v-else>
                   <button class="btn btn-outline-hgray btn-sm d-block w-100"
                     @click="createImages">
-                    新增圖片
+                    新增陣列圖片
                   </button>
                 </div>
               </div>
@@ -196,12 +196,12 @@ export default {
       tempProduct: {
         imagesUrl: []
       },
-      productModal: '',
-      delProductModal: ''
+      productModal: {},
+      delProductModal: {}
     }
   },
   methods: {
-    getData (page = 1) {
+    getProducts (page = 1) {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/products?page=${page}`
       vm.$http.get(api).then((res) => {
@@ -225,7 +225,7 @@ export default {
         if (res.data.success) {
           vm.$swal({ title: res.data.message, icon: 'success' })
           vm.productModal.hide()
-          vm.getData()
+          vm.getProducts()
         } else {
           vm.$swal({ title: res.data.message, icon: 'error' })
         }
@@ -244,7 +244,15 @@ export default {
           if (res.data.success) {
             console.log(res.data)
             vm.tempProduct.imageUrl = res.data.imageUrl
+            vm.$swal({ title: '上傳圖片成功', icon: 'success' })
           }
+          if (!res.data.success) {
+            vm.$swal({ title: '檔案格式錯誤 or 圖片太大無法上傳', icon: 'error' })
+          }
+        })
+        .catch((err) => {
+          vm.fileUploading = false
+          console.log(err.response)
         })
     },
     openModal (isNew, item) {
@@ -265,7 +273,7 @@ export default {
       }
     },
     createImages () {
-      this.tempProduct.imagesUrl = []
+      this.tempProduct.imagesUrl = ['']
       this.tempProduct.imagesUrl.push('')
     },
     delProduct () {
@@ -276,7 +284,7 @@ export default {
         if (res.data.success) {
           vm.$swal({ title: res.data.message, icon: 'success' })
           vm.delProductModal.hide()
-          vm.getData()
+          vm.getProducts()
         } else {
           vm.$swal({ title: res.data.message, icon: 'error' })
         }
@@ -285,15 +293,11 @@ export default {
   },
   created () {
     const vm = this
-    vm.getData()
+    vm.getProducts()
   },
   mounted () {
-    this.productModal = new bootstrap.Modal(document.getElementById('productModal'), {
-      keyboard: false
-    })
-    this.delProductModal = new bootstrap.Modal(document.getElementById('delProductModal'), {
-      keyboard: false
-    })
+    this.productModal = new bootstrap.Modal(document.getElementById('productModal'))
+    this.delProductModal = new bootstrap.Modal(document.getElementById('delProductModal'))
   }
 }
 </script>
