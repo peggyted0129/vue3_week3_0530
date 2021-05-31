@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="d-grid gap-2">
-          <button type="submit" @click="signin" class="btn btn-hgray mt-4">Sign in</button>
+          <button type="submit" @click="signin" class="btn btn-hgray hvr-shadow-radial mt-4">Sign in</button>
         </div>
       </form>
     </div>

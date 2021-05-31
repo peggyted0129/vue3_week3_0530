@@ -1,7 +1,7 @@
 .main {
   background: url('~@/assets/img/banner5.jpg') 0 / cover fixed;
-  min-height: 100vh;
-  padding: calc(50vh - 165px) 0 0;
+  height: calc(100vh - 48px);
+  padding: calc((100vh - 377px) / 2) 0;
 }
 .glass {
   background: hsla(0,0%,100%,.5);  
@@ -9,7 +9,7 @@
   overflow: hidden;
   padding: 2em 0;
   border-radius: .3em;
-  max-width: 500px;
+  max-width: 300px;
   margin: 0 auto;
   box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
 	            0 .5em 1em rgba(0, 0, 0, 0.6);
@@ -28,12 +28,18 @@
   left: 75%;
 }
 @media (min-width: 414px){
+  .glass {
+    max-width: 400px;
+  }
   .eye {
     top: 51%;
     left: 81%;
   }
 }
 @include mobile {
+  .glass {
+    max-width: 500px;
+  }
   .eye {
     top: 43%;
     left: 84%;
