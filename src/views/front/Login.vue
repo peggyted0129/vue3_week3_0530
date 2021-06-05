@@ -10,13 +10,13 @@
         <div class="row mb-3">
           <label for="Email" class="col-sm-3 col-form-label fs-5">Email</label>
           <div class="col-sm-9">
-            <input type="email" v-model="userData.username" class="form-control" id="Email" placeholder="name@example.com" autofocus>
+            <input type="email" v-model="userData.username" ref="inputEmail" class="form-control" id="Email" placeholder="name@example.com" autofocus>
           </div>
         </div>
         <div class="row mb-3">
           <label for="password" class="col-sm-3 col-form-label fs-5">Password</label>
           <div class="col-sm-9">
-            <input :type="passwordStatus" v-model="userData.password" class="form-control position-relative" id="password" placeholder="Password">
+            <input :type="passwordStatus" v-model="userData.password" autocomplete="on" class="form-control position-relative" id="password" placeholder="Password">
             <a href="#" @click.prevent="eyeChange" class="eye position-absolute">
               <h3 class="link-dark" style="font-size: 20px">
                 <i class="fas fa-eye-slash" id="eye"></i>
@@ -85,6 +85,9 @@ export default {
         this.passwordStatus = 'password'
       }
     }
+  },
+  mounted () {
+    this.$refs.inputEmail.focus()
   }
 }
 </script>

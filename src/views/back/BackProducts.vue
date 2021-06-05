@@ -303,8 +303,14 @@ export default {
     vm.getProductsA()
   },
   mounted () {
-    this.productModal = new bootstrap.Modal(document.getElementById('productModal'))
-    this.delProductModal = new bootstrap.Modal(document.getElementById('delProductModal'))
+    this.productModal = new bootstrap.Modal(document.getElementById('productModal'), {
+      keyboard: false,
+      backdrop: 'static'
+    })
+    this.delProductModal = new bootstrap.Modal(document.getElementById('delProductModal'), {
+      keyboard: false,
+      backdrop: 'static'
+    })
   }
 }
 </script>

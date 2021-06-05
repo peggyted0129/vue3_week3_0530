@@ -1,7 +1,7 @@
 <template>
 <section>
   <nav :class="{ 'navbar-scroll': isMenuOpen || scrollHeader , 'bg-theme' : togglerBtn }" class="navbar navbar-expand-md py-0">
-    <div class="container-fluid container-md align-items-center">
+    <div class="container-fluid container-md align-items-center my-5 my-md-0">
       <h1 class="h3 ml-5 ml-md-0">
         <router-link :to="{ name: 'Home' }" class="navbar-logo">Sebamed</router-link>
       </h1>
