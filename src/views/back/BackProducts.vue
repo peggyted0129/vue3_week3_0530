@@ -33,13 +33,14 @@
           </tr>
         </tbody>
       </table>
+      <Pagination :pages="pagination" @get-product="getProductsA" class="mt-10"></Pagination>
     </div>
     <!-- Modal -->
     <div id="productModal" data-bs-backdrop="static" ref="productModal" class="modal fade" tabindex="-1" aria-labelledby="productModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl">
         <div class="modal-content border-0">
-          <div class="modal-header bg-streak text-white">
+          <div class="modal-header bg-hgray text-white">
             <h5 id="productModalLabel" class="modal-title fw-bolder">
               <span v-if="isNew">新增產品</span>
               <span v-else>編輯產品</span>
@@ -147,7 +148,7 @@
             <button type="button" class="btn btn-outline-danger fw-bolder" data-bs-dismiss="modal">
               取消
             </button>
-            <button type="button" class="btn btn-streak text-white fw-bolder" @click="updateProduct">
+            <button type="button" class="btn btn-hgray text-white fw-bolder" @click="updateProduct">
               確認
             </button>
           </div>
@@ -186,13 +187,18 @@
 </template>
 <script>
 import * as bootstrap from 'bootstrap'
+import Pagination from '@/components/Pagination.vue'
 
 export default {
+  components: {
+    Pagination
+  },
   data () {
     return {
       products: [],
       isNew: false,
       fileUploading: false,
+      pagination: {},
       tempProduct: {
         imagesUrl: []
       },
@@ -201,13 +207,14 @@ export default {
     }
   },
   methods: {
-    getProducts (page = 1) {
+    getProductsA (page = 1) {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/products?page=${page}`
       vm.$http.get(api).then((res) => {
         console.log('產品列表', res.data)
         if (res.data.success) {
           vm.products = res.data.products
+          vm.pagination = res.data.pagination
         } else {
           vm.$swal({ title: res.data.message, icon: 'error' })
         }
@@ -225,7 +232,7 @@ export default {
         if (res.data.success) {
           vm.$swal({ title: res.data.message, icon: 'success' })
           vm.productModal.hide()
-          vm.getProducts()
+          vm.getProductsA()
         } else {
           vm.$swal({ title: res.data.message, icon: 'error' })
         }
@@ -284,7 +291,7 @@ export default {
         if (res.data.success) {
           vm.$swal({ title: res.data.message, icon: 'success' })
           vm.delProductModal.hide()
-          vm.getProducts()
+          vm.getProductsA()
         } else {
           vm.$swal({ title: res.data.message, icon: 'error' })
         }
@@ -293,7 +300,7 @@ export default {
   },
   created () {
     const vm = this
-    vm.getProducts()
+    vm.getProductsA()
   },
   mounted () {
     this.productModal = new bootstrap.Modal(document.getElementById('productModal'))

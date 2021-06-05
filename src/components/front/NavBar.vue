@@ -54,7 +54,7 @@
               <span v-else class="ms-1 addIcon-phone d-md-none d-block ms-auto"><i class="fas fa-plus"></i></span>
             </a>
             <!-- 手機版 : 手風琴效果 -->
-            <ul class="dropdown-open js-skin-open d-md-none" :class="{ 'd-block' : isDropdown , active : isDropdown }">
+            <ul class="dropdown-open js-skin-open d-md-none" :class="{ 'd-block' : isSkinDropdown , active : isSkinDropdown }">
               <li class="mb-5">
                 <a href="#" class="ms-5 text-white">[ 小資美學堂 ] 肌膚 你不知道的奧秘</a>
               </li>

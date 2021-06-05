@@ -1,0 +1,44 @@
+.page-link, .page-link:hover {
+	color: $theme;
+}
+.page-link.active {
+	z-index: 3;
+	color: $theme;
+}
+.page-link {
+  height: 42px;
+  width: 42px;
+  text-align: center;
+  color: $theme;
+  border: 1px solid $theme;
+  & .material-icons {
+    color:$theme;
+  }
+  &:hover {
+    background-color: $theme;
+    color:  $white;
+    transition: .7s;
+  }
+  &:hover .material-icons { 
+    color:$white;
+  }
+  &:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #dad7d6;
+  }
+}
+.page-item:first-child .page-link {
+  border-top-left-radius: 0rem;
+  border-bottom-left-radius: 0rem;
+}
+.page-item:last-child .page-link {
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+}
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: $theme;
+  border-color:$theme;
+}

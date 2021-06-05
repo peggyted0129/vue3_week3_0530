@@ -6,11 +6,11 @@
       <h3 class="mb-0 mb-sm-3 text-center text-theme fw-bolder">
         <i class="fas fa-user-alt me-9"></i>登入後台
       </h3>
-      <form class="my-0 mx-10 m-sm-10 fw-bolder">
+      <form @submit.prevent="signin" class="my-0 mx-10 m-sm-10 fw-bolder">
         <div class="row mb-3">
           <label for="Email" class="col-sm-3 col-form-label fs-5">Email</label>
           <div class="col-sm-9">
-            <input type="email" v-model="userData.username" class="form-control" id="Email" placeholder="name@example.com">
+            <input type="email" v-model="userData.username" class="form-control" id="Email" placeholder="name@example.com" autofocus>
           </div>
         </div>
         <div class="row mb-3">
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="d-grid gap-2">
-          <button type="submit" @click="signin" class="btn btn-hgray hvr-shadow-radial mt-4">Sign in</button>
+          <button type="submit" class="btn btn-hgray hvr-shadow-radial mt-4">Sign in</button>
         </div>
       </form>
     </div>
